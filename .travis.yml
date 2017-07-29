@@ -1,0 +1,6 @@
+language: php
+php:
+- 7.0
+install:
+- composer update --no-dev --quiet
+script: phpunit -c phpunit.xml --coverage-text
