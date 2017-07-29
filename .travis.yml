@@ -3,4 +3,9 @@ php:
 - 7.0
 install:
 - composer update --no-dev --quiet
-script: phpunit -c phpunit.xml --coverage-text
+script:
+- phpunit -c phpunit.xml --coverage-text
+- vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
